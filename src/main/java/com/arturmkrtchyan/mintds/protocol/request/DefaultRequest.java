@@ -145,12 +145,15 @@ public class DefaultRequest implements Request {
 
     @Override
     public String toString() {
-        return "DefaultRequest{" +
-                "command=" + command +
-                ", dataStructure=" + dataStructure +
-                ", key='" + key + '\'' +
-                ", value=" + value +
-                ", options=" + options +
-                '}';
+        final StringBuilder sb = new StringBuilder();
+        sb.append(command).append(" ")
+          .append(dataStructure).append(" ")
+          .append(key).append(" ");
+        
+        value.ifPresent(str -> sb.append(str).append(" "));
+        options.forEach((key, value) ->
+                sb.append("--").append(key).append("=").append(value));
+
+        return sb.toString();
     }
 }
