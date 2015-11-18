@@ -149,7 +149,7 @@ public class DefaultRequest implements Request {
         sb.append(command).append(" ")
           .append(dataStructure).append(" ")
           .append(key).append(" ");
-        
+
         value.ifPresent(str -> sb.append(str).append(" "));
         options.forEach((key, value) ->
                 sb.append("--").append(key).append("=").append(value));
