@@ -30,13 +30,13 @@ public class DefaultRequest implements Request {
         final Command command = Command.fromString(msgParts[0].trim())
                 .orElseThrow(() -> new IllegalStateException("Invalid Command."));
 
-        if(msgParts.length < 2) {
+        if (msgParts.length < 2) {
             throw new IllegalStateException("DataStructure is missing.");
         }
         final DataStructure dataStructure = DataStructure.fromString(msgParts[1].trim())
                 .orElseThrow(() -> new IllegalStateException("Invalid DataStructure."));
 
-        if(msgParts.length < 3) {
+        if (msgParts.length < 3) {
             throw new IllegalStateException("Key is missing.");
         }
         final String key = msgParts[2].trim();
@@ -53,16 +53,16 @@ public class DefaultRequest implements Request {
     }
 
     private static String getValue(final Command command, final DataStructure dataStructure, final String[] msg) {
-        if(dataStructure == DataStructure.BloomFilter &&
+        if (dataStructure == DataStructure.BloomFilter &&
                 (command == Command.ADD || command == Command.CONTAINS)) {
             return getValue(msg);
         }
 
-        if(dataStructure == DataStructure.HyperLogLog && command == Command.ADD) {
+        if (dataStructure == DataStructure.HyperLogLog && command == Command.ADD) {
             return getValue(msg);
         }
 
-        if(dataStructure == DataStructure.CountMinSketch &&
+        if (dataStructure == DataStructure.CountMinSketch &&
                 (command == Command.ADD || command == Command.COUNT)) {
             return getValue(msg);
         }
@@ -70,7 +70,7 @@ public class DefaultRequest implements Request {
     }
 
     private static String getValue(final String[] msg) {
-        if(msg.length < 4) {
+        if (msg.length < 4) {
             throw new IllegalStateException("Value is missing.");
         }
         return msg[3].trim();
@@ -147,8 +147,8 @@ public class DefaultRequest implements Request {
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append(command).append(" ")
-          .append(dataStructure).append(" ")
-          .append(key).append(" ");
+                .append(dataStructure).append(" ")
+                .append(key).append(" ");
 
         value.ifPresent(str -> sb.append(str).append(" "));
         options.forEach((key, value) ->
