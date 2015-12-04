@@ -84,6 +84,7 @@ public class DefaultRequest implements Request {
         private Map<String, String> options;
 
         public Builder() {
+            value = Optional.empty();
             options = new HashMap<>();
         }
 
