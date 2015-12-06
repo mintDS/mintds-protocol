@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mintDS/mintds-protocol.svg?branch=master)](https://travis-ci.org/mintDS/mintds-protocol)
+
 Protocol
 --------
 
