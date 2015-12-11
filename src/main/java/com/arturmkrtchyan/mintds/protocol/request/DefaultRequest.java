@@ -31,13 +31,13 @@ public class DefaultRequest implements Request {
                 .orElseThrow(() -> new IllegalStateException("Invalid Command."));
 
         if (msgParts.length < 2) {
-            throw new IllegalStateException("DataStructure is missing.");
+            throw new IllegalStateException("DataStructure is missing from '" + String.join(" ", msg) + "'.");
         }
         final DataStructure dataStructure = DataStructure.fromString(msgParts[1].trim())
                 .orElseThrow(() -> new IllegalStateException("Invalid DataStructure."));
 
         if (msgParts.length < 3) {
-            throw new IllegalStateException("Key is missing.");
+            throw new IllegalStateException("Key is missing from '" + String.join(" ", msg) + "'.");
         }
         final String key = msgParts[2].trim();
 
@@ -71,7 +71,7 @@ public class DefaultRequest implements Request {
 
     private static String getValue(final String[] msg) {
         if (msg.length < 4) {
-            throw new IllegalStateException("Value is missing.");
+            throw new IllegalStateException("Value is missing from '" + String.join(" ", msg) + "'.");
         }
         return msg[3].trim();
     }
