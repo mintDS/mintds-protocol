@@ -4,7 +4,7 @@
     <groupId>com.arturmkrtchyan.mintds</groupId>
     <artifactId>mintds-protocol</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
 
     <name>mintds-protocol</name>
     <description>mintDS protocol implementation in Java</description>
@@ -152,6 +152,19 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <distributionManagement>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Staging Releases</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Snapshots Deployments</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <profiles>
 
