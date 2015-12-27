@@ -4,7 +4,7 @@
     <groupId>com.arturmkrtchyan.mintds</groupId>
     <artifactId>mintds-protocol</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.1</version>
 
     <name>mintds-protocol</name>
     <description>mintDS protocol implementation in Java</description>
@@ -28,7 +28,7 @@
         <connection>scm:git:git@github.com:mintDS/mintds-protocol.git</connection>
         <developerConnection>scm:git:git@github.com:mintDS/mintds-protocol.git</developerConnection>
         <url>git@github.com:mintDS/mintds-protocol.git</url>
-        <tag>HEAD</tag>
+        <tag>mintds-protocol-0.1.1</tag>
     </scm>
 
     <properties>
