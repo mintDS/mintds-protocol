@@ -15,6 +15,18 @@ By default, mintDS will listen for TCP connections on port 7657. It uses a simpl
 | contains   | contains bloomfilter myfilter myvalue | yes \| no \| failure {msg}               |
 | drop       | drop bloomfilter myfilter             | success \| non_existent \| failure {msg} |
 
+#### CountingBloomFilter
+
+| Commands   | Request                               | Response                                 |
+|------------|---------------------------------------|------------------------------------------|
+| create     | create countingbloomfilter myfilter --probability=0.01 <br>--capacity=1000000 | success \| exists \| failure {msg}       |
+| exists     | exists countingbloomfilter myfilter           | yes \| no \| failure {msg}               |
+| add        | add countingbloomfilter myfilter myvalue      | success \| failure {msg}                 |
+| remove     | remove countingbloomfilter myfilter myvalue   | success \| failure {msg}                 |
+| contains   | contains countingbloomfilter myfilter myvalue | yes \| no \| failure {msg}               |
+| count      | count countingbloomfilter myfilter myvalue    | {number} \| failure {msg}                |
+| drop       | drop countingbloomfilter myfilter             | success \| non_existent \| failure {msg} |
+
 #### HyperLogLog
 
 | Commands   | Request                       | Response                                 |
