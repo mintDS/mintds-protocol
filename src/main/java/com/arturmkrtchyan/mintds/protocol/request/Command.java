@@ -7,6 +7,7 @@ public enum Command {
     CREATE,
     EXISTS,
     ADD,
+    REMOVE,
     DROP,
     CONTAINS,
     COUNT;

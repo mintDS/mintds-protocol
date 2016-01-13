@@ -5,7 +5,8 @@ import java.util.Optional;
 public enum DataStructure {
     BloomFilter,
     HyperLogLog,
-    CountMinSketch;
+    CountMinSketch,
+    CountingBloomFilter;
 
     public static Optional<DataStructure> fromString(final String dataStructure) {
         for (DataStructure ds : DataStructure.values()) {
