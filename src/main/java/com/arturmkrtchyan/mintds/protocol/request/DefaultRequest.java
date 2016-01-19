@@ -58,6 +58,12 @@ public class DefaultRequest implements Request {
             return getValue(msg);
         }
 
+        if (dataStructure == DataStructure.CountingBloomFilter &&
+                (command == Command.ADD || command == Command.CONTAINS ||
+                 command == Command.COUNT || command == Command.REMOVE)) {
+            return getValue(msg);
+        }
+
         if (dataStructure == DataStructure.HyperLogLog && command == Command.ADD) {
             return getValue(msg);
         }
